@@ -31,7 +31,7 @@ if "esperar_siguiente_minijuego" not in st.session_state:
 
 st.title("🎂 Quiz de cumpleaños")
 st.markdown("#### Hola gordi\n Antes de empezar me gustaría desearte un maravilloso cumple rodeado de quienes más te quieren. Me pone triste un año más no poder pasar ese día juntos. Eres una persona muy especial para mi que merece recibir su regalito de forma también especial.\nEs por eso que te he preparado un Quiz/juego para adaptarnos perfectamente a algún plan chulito del cúal los gastos corren a mi cuenta. Es algo sencillito así que presta mucha atención.")
-st.markdown("**Reglas del juego:** Responde con sinceridad: He modificado TODO el código para que haya tres posibles y persuasivos resultados.\n El Quiz constará de 8 preguntas, algunas nos ayudará a elegir regalo y otras me harán cuestionarme la relación (o no).\n Cada pregunta sobre el viaje suma un nº determinado de puntos.\n Las preguntas de valoración amorosa pueden restar puntos (yo que tú respondería bien...)\n. Además, he añadido un par de minujuegos/preguntas chorras para hacerlo más interactivo (estas también suman o restan puntos).\n La suma total de puntos elegirá nuestro destino.\n Antes de ver el resultado se lanzará un dado que podrá cambiar todo...\n ¿Estás listo? jjj ¡SUERTE!")
+st.markdown("**Reglas del juego:** Responde con sinceridad: He modificado TODO el código para que haya tres posibles y persuasivos resultados.\n El Quiz constará de 8 preguntas, algunas nos ayudará a elegir regalo y otras me harán cuestionarme la relación (o no).\n Cada pregunta sobre el regalo suma un nº determinado de puntos.\n Las preguntas de valoración amorosa pueden restar puntos (yo que tú respondería bien...)\n. Además, he añadido un par de minujuegos/preguntas chorras para hacerlo más interactivo (estas también suman o restan puntos).\n La suma total de puntos elegirá nuestro destino.\n Antes de ver el resultado se lanzará un dado que podrá cambiar todo...\n ¿Estás listo? jjj ¡SUERTE!")
 
 if not st.session_state.empezar_quiz:
     if st.button("😎 Empezar quiz"):
@@ -224,9 +224,9 @@ else:
             puntos = st.session_state.puntos
             st.write(f"Has obtenido **{puntos} puntos**.")
 
-            if puntos <= 10:
+            if puntos <= 15:
                 regalo = "NOS VAMOS EN BUSCA DEL LINCE IBÉRICO Y LOS CORRELIMOS"
-            elif puntos <= 20:
+            elif puntos <= 25:
                 regalo = "¡¡¡¡¡NOS VAMOS A GRANADAAAAA!!!!!"
             else:
                 regalo = "¡¡¡¡¡PREPARA LAS MALETAS QUE NOS VAMOS A LISBOA!!!!"
@@ -245,3 +245,4 @@ else:
                 for key in st.session_state.keys():
                     del st.session_state[key]
                 st.rerun()
+
